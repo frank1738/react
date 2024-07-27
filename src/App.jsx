@@ -1,5 +1,5 @@
-import ReactQuery from './components/ReactQuery';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import Form from './components/Form';
 
 import './App.css';
 
@@ -9,7 +9,8 @@ function App() {
     <QueryClientProvider client={queryClient}>
       <div>
         <h1>jus use react</h1>
-        <ReactQuery />
+        {/* <ReactQuery /> */}
+        <Form />
       </div>
     </QueryClientProvider>
   );

@@ -17,12 +17,16 @@ const Form = () => {
 
     return errors;
   };
+
   const formik = useFormik({
     initialValues: {
       email: '',
       firstname: '',
       lastname: '',
       phone: '',
+      terms: false,
+      gender: '',
+      count: '',
     },
     validate,
     onSubmit: handleFormSubmit,
@@ -80,11 +84,48 @@ const Form = () => {
               type="phone"
               name="phone"
               {...formik.getFieldProps('phone')}
-              // value={formik.values.phone}
               onChange={handleTelChange}
-              // onBlur={formik.handleBlur}
             />
           </div>
+          <div>
+            <label htmlFor="select"></label>
+          </div>
+
+          <div>
+            <label htmlFor="gender">Gender</label>
+            <select
+              name="gender"
+              id="gender"
+              value={formik.values.gender}
+              onChange={formik.handleChange}
+            >
+              <option value="">select gender</option>
+              <option value="male">male</option>
+              <option value="female">female</option>
+            </select>
+          </div>
+          <div>
+            <input
+              id="terms"
+              name="terms"
+              type="checkbox"
+              value={formik.values.terms}
+              onChange={formik.handleChange}
+            />
+            <label htmlFor="terms">Terms & conditions</label>
+          </div>
+
+          <div>
+            <label htmlFor="count">count</label>
+            <input
+              type="number"
+              name="count"
+              id="count"
+              value={formik.values.count}
+              onChange={formik.handleChange}
+            />
+          </div>
+
           <button type="submit">submit</button>
         </form>
       </div>
