@@ -1,8 +1,10 @@
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import ReactQuery from './components/ReactQuery';
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
+import ButtonTest from './components/RandomTests/ButtonTest';
 
 import './App.css';
+import Weather from './components/RandomTests/Weather';
 
 function App() {
   const queryClient = new QueryClient();
@@ -16,8 +18,7 @@ function App() {
           alignItems: 'center',
         }}
       >
-        <h1>jus use react</h1>
-        <ReactQuery />
+        <Weather />
       </div>
       <ReactQueryDevtools initialIsOpen={false} />
     </QueryClientProvider>
